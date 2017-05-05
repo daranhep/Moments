@@ -23,6 +23,8 @@
 		E0A5829E1EBCE219003AA00B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A5829D1EBCE219003AA00B /* LoginViewController.swift */; };
 		E0A582A11EBCE721003AA00B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A582A01EBCE721003AA00B /* ProfileViewController.swift */; };
 		E0A582A31EBCF2EE003AA00B /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A582A21EBCF2EE003AA00B /* Media.swift */; };
+		E0A582A61EBCFC12003AA00B /* DummyPostComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A582A51EBCFC12003AA00B /* DummyPostComposerViewController.swift */; };
+		E0A582AA1EBCFC82003AA00B /* PostComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A582A91EBCFC82003AA00B /* PostComposerViewController.swift */; };
 		E0D3B5AF1EBC414600D3E2EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0D3B5AE1EBC414600D3E2EA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		E0A5829D1EBCE219003AA00B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E0A582A01EBCE721003AA00B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E0A582A21EBCF2EE003AA00B /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		E0A582A51EBCFC12003AA00B /* DummyPostComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyPostComposerViewController.swift; sourceTree = "<group>"; };
+		E0A582A91EBCFC82003AA00B /* PostComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostComposerViewController.swift; sourceTree = "<group>"; };
 		E0D3B5AE1EBC414600D3E2EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F9D2D2702DCEB29B23EB655B /* Pods-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moments/Pods-Moments.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,8 +121,9 @@
 				E09BCAA61EBB9C4C00DA7226 /* AppDelegate.swift */,
 				E041DCBE1EBC5390006F45AA /* Model */,
 				E09BCAAA1EBB9C4C00DA7226 /* Main.storyboard */,
-				E0A5829B1EBCE1B7003AA00B /* Newsfeed */,
 				E0A5829A1EBCE19E003AA00B /* User Authentication */,
+				E0A5829B1EBCE1B7003AA00B /* Newsfeed */,
+				E0A582A41EBCFBD1003AA00B /* Post Composer Tab */,
 				E0A5829F1EBCE6FB003AA00B /* Profile Tab */,
 				E0A5829C1EBCE1CC003AA00B /* Helper Classes */,
 				E09BCAAD1EBB9C4C00DA7226 /* Assets.xcassets */,
@@ -161,6 +166,15 @@
 				E0A582A01EBCE721003AA00B /* ProfileViewController.swift */,
 			);
 			name = "Profile Tab";
+			sourceTree = "<group>";
+		};
+		E0A582A41EBCFBD1003AA00B /* Post Composer Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E0A582A51EBCFC12003AA00B /* DummyPostComposerViewController.swift */,
+				E0A582A91EBCFC82003AA00B /* PostComposerViewController.swift */,
+			);
+			name = "Post Composer Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,8 +309,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0A582A31EBCF2EE003AA00B /* Media.swift in Sources */,
+				E0A582A61EBCFC12003AA00B /* DummyPostComposerViewController.swift in Sources */,
 				E0A5829E1EBCE219003AA00B /* LoginViewController.swift in Sources */,
 				E041DCBD1EBC4F5E006F45AA /* FirebaseReference.swift in Sources */,
+				E0A582AA1EBCFC82003AA00B /* PostComposerViewController.swift in Sources */,
 				E0A582A11EBCE721003AA00B /* ProfileViewController.swift in Sources */,
 				E041DCC61EBC6600006F45AA /* SignupTableViewController.swift in Sources */,
 				E041DCC21EBC58B2006F45AA /* FIRimage.swift in Sources */,

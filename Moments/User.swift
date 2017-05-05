@@ -109,3 +109,10 @@ class User
         ]
     }
 }
+
+extension User {
+    func share(newMedia: Media)
+    {
+        DatabaseReference.users(uid: uid).reference().child("media").childByAutoId().setValue(newMedia.uid)
+    }
+}

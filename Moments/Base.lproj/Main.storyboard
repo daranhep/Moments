@@ -34,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="-830" y="858"/>
         </scene>
-        <!--View Controller-->
+        <!--Dummy Post Composer View Controller-->
         <scene sceneID="Ldg-6k-PIq">
             <objects>
-                <viewController id="2XK-a7-SdB" sceneMemberID="viewController">
+                <viewController id="2XK-a7-SdB" customClass="DummyPostComposerViewController" customModule="Moments" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PB3-8y-WHZ"/>
                         <viewControllerLayoutGuide type="bottom" id="TGo-Bp-TXq"/>
@@ -377,7 +377,7 @@
         <!--New Post-->
         <scene sceneID="Jbc-xL-vm5">
             <objects>
-                <tableViewController id="cAL-tT-WYQ" sceneMemberID="viewController">
+                <tableViewController id="cAL-tT-WYQ" customClass="PostComposerViewController" customModule="Moments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="q6c-vH-4r4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -527,12 +527,23 @@
                     <navigationItem key="navigationItem" title="New Post" id="pI9-Pl-uRi">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ZaD-hE-AXx">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cancelDidTap:" destination="cAL-tT-WYQ" id="plv-xE-Hd9"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="XkH-LB-c6u">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="shareDidTap:" destination="cAL-tT-WYQ" id="jFf-PX-ykF"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="v2r-rH-aAY" id="4dh-Z8-bNZ"/>
+                        <outlet property="shareBarButtonItem" destination="XkH-LB-c6u" id="6jh-1U-JsT"/>
+                        <outlet property="textView" destination="aCN-II-yd2" id="vvs-SW-LIU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfS-oZ-zpi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -541,7 +552,7 @@
         <!--Navigation Controller-->
         <scene sceneID="kP4-35-a0R">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cMG-xR-kO6" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PostComposerNavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="cMG-xR-kO6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ABH-nX-i27">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
