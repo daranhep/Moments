@@ -115,4 +115,18 @@ extension User {
     {
         DatabaseReference.users(uid: uid).reference().child("media").childByAutoId().setValue(newMedia.uid)
     }
+    
+    func downloadProfilePicture(completion: @escaping (UIImage?, NSError?) -> Void)
+    {
+        FIRImage.downloadProfileImage(uid, completion: { (image, error) in
+            self.profileImage = image
+            completion(image, error as NSError?)
+        })
+    }
+}
+
+extension User: Equatable { }
+
+func ==(lhs: User, rhs: User) -> Bool {
+    return lhs.uid == rhs.uid
 }

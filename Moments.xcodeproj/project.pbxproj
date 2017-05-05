@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57C3562A86690E14C4FAD7FB /* Pods_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43478AB0070C01E5B068AA7 /* Pods_Moments.framework */; };
+		E0276FE51EBD1BB000D31767 /* MediaHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0276FE41EBD1BB000D31767 /* MediaHeaderCell.swift */; };
 		E041DCBD1EBC4F5E006F45AA /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCBC1EBC4F5E006F45AA /* FirebaseReference.swift */; };
 		E041DCC01EBC539C006F45AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCBF1EBC539C006F45AA /* User.swift */; };
 		E041DCC21EBC58B2006F45AA /* FIRimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCC11EBC58B2006F45AA /* FIRimage.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		19B3434E39E9BBD59C1EE660 /* Pods-Moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moments/Pods-Moments.debug.xcconfig"; sourceTree = "<group>"; };
 		D43478AB0070C01E5B068AA7 /* Pods_Moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0276FE41EBD1BB000D31767 /* MediaHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaHeaderCell.swift; sourceTree = "<group>"; };
 		E041DCBC1EBC4F5E006F45AA /* FirebaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		E041DCBF1EBC539C006F45AA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E041DCC11EBC58B2006F45AA /* FIRimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRimage.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E041DCC31EBC65BA006F45AA /* NewsFeedTableViewController.swift */,
+				E0276FE41EBD1BB000D31767 /* MediaHeaderCell.swift */,
 			);
 			name = Newsfeed;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				E0A5829E1EBCE219003AA00B /* LoginViewController.swift in Sources */,
 				E041DCBD1EBC4F5E006F45AA /* FirebaseReference.swift in Sources */,
 				E0A582AA1EBCFC82003AA00B /* PostComposerViewController.swift in Sources */,
+				E0276FE51EBD1BB000D31767 /* MediaHeaderCell.swift in Sources */,
 				E0A582A11EBCE721003AA00B /* ProfileViewController.swift in Sources */,
 				E041DCC61EBC6600006F45AA /* SignupTableViewController.swift in Sources */,
 				E041DCC21EBC58B2006F45AA /* FIRimage.swift in Sources */,
