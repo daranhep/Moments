@@ -11,6 +11,10 @@
 		E041DCBD1EBC4F5E006F45AA /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCBC1EBC4F5E006F45AA /* FirebaseReference.swift */; };
 		E041DCC01EBC539C006F45AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCBF1EBC539C006F45AA /* User.swift */; };
 		E041DCC21EBC58B2006F45AA /* FIRimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCC11EBC58B2006F45AA /* FIRimage.swift */; };
+		E041DCC41EBC65BA006F45AA /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCC31EBC65BA006F45AA /* NewsFeedTableViewController.swift */; };
+		E041DCC61EBC6600006F45AA /* SignupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCC51EBC6600006F45AA /* SignupTableViewController.swift */; };
+		E041DCC81EBC663E006F45AA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCC71EBC663E006F45AA /* WelcomeViewController.swift */; };
+		E041DCCA1EBC6B4A006F45AA /* imagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCC91EBC6B4A006F45AA /* imagePickerHelper.swift */; };
 		E07731201EBC3F39008BC946 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E077311F1EBC3F39008BC946 /* Podfile */; };
 		E09BCAA71EBB9C4C00DA7226 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09BCAA61EBB9C4C00DA7226 /* AppDelegate.swift */; };
 		E09BCAAC1EBB9C4C00DA7226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09BCAAA1EBB9C4C00DA7226 /* Main.storyboard */; };
@@ -25,6 +29,11 @@
 		E041DCBC1EBC4F5E006F45AA /* FirebaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		E041DCBF1EBC539C006F45AA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E041DCC11EBC58B2006F45AA /* FIRimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRimage.swift; sourceTree = "<group>"; };
+		E041DCC31EBC65BA006F45AA /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
+		E041DCC51EBC6600006F45AA /* SignupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupTableViewController.swift; sourceTree = "<group>"; };
+		E041DCC71EBC663E006F45AA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		E041DCC91EBC6B4A006F45AA /* imagePickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imagePickerHelper.swift; sourceTree = "<group>"; };
+		E041DCCB1EBC7B3D006F45AA /* Moments.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moments.entitlements; sourceTree = "<group>"; };
 		E077311F1EBC3F39008BC946 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		E09BCAA31EBB9C4C00DA7226 /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09BCAA61EBB9C4C00DA7226 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,9 +106,14 @@
 		E09BCAA51EBB9C4C00DA7226 /* Moments */ = {
 			isa = PBXGroup;
 			children = (
+				E041DCCB1EBC7B3D006F45AA /* Moments.entitlements */,
 				E09BCAA61EBB9C4C00DA7226 /* AppDelegate.swift */,
 				E041DCBE1EBC5390006F45AA /* Model */,
 				E09BCAAA1EBB9C4C00DA7226 /* Main.storyboard */,
+				E041DCC71EBC663E006F45AA /* WelcomeViewController.swift */,
+				E041DCC31EBC65BA006F45AA /* NewsFeedTableViewController.swift */,
+				E041DCC51EBC6600006F45AA /* SignupTableViewController.swift */,
+				E041DCC91EBC6B4A006F45AA /* imagePickerHelper.swift */,
 				E09BCAAD1EBB9C4C00DA7226 /* Assets.xcassets */,
 				E09BCAAF1EBB9C4C00DA7226 /* LaunchScreen.storyboard */,
 				E09BCAB21EBB9C4C00DA7226 /* Info.plist */,
@@ -145,6 +159,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 825KNZSNMQ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -235,9 +254,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E041DCBD1EBC4F5E006F45AA /* FirebaseReference.swift in Sources */,
+				E041DCC61EBC6600006F45AA /* SignupTableViewController.swift in Sources */,
 				E041DCC21EBC58B2006F45AA /* FIRimage.swift in Sources */,
+				E041DCCA1EBC6B4A006F45AA /* imagePickerHelper.swift in Sources */,
 				E09BCAA71EBB9C4C00DA7226 /* AppDelegate.swift in Sources */,
+				E041DCC41EBC65BA006F45AA /* NewsFeedTableViewController.swift in Sources */,
 				E041DCC01EBC539C006F45AA /* User.swift in Sources */,
+				E041DCC81EBC663E006F45AA /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +386,7 @@
 			baseConfigurationReference = 19B3434E39E9BBD59C1EE660 /* Pods-Moments.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Moments/Moments.entitlements;
 				DEVELOPMENT_TEAM = 825KNZSNMQ;
 				INFOPLIST_FILE = Moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -377,6 +401,7 @@
 			baseConfigurationReference = F9D2D2702DCEB29B23EB655B /* Pods-Moments.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Moments/Moments.entitlements;
 				DEVELOPMENT_TEAM = 825KNZSNMQ;
 				INFOPLIST_FILE = Moments/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

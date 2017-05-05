@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="196" y="530"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="Adp-th-O86">
             <objects>
-                <viewController id="bCq-QB-78Z" sceneMemberID="viewController">
+                <viewController id="bCq-QB-78Z" customClass="WelcomeViewController" customModule="Moments" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Olp-TS-j3j"/>
                         <viewControllerLayoutGuide type="bottom" id="Spa-Kc-OD8"/>
@@ -132,12 +132,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31u-CA-SqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876" y="-1258"/>
+            <point key="canvasLocation" x="847" y="-1188"/>
         </scene>
         <!--Moments-->
         <scene sceneID="HxN-Vo-H1Z">
             <objects>
-                <tableViewController id="ude-Eu-yuW" sceneMemberID="viewController">
+                <tableViewController id="ude-Eu-yuW" customClass="NewsFeedTableViewController" customModule="Moments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0gD-MJ-cbF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -948,7 +948,7 @@
         <!--Root View Controller-->
         <scene sceneID="Fxy-d3-v65">
             <objects>
-                <tableViewController id="JS2-fe-kkE" sceneMemberID="viewController">
+                <tableViewController id="JS2-fe-kkE" customClass="SignupTableViewController" customModule="Moments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="dR4-jP-4vR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -966,6 +966,9 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S6-cY-bxn">
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                     <state key="normal" title="Change Profile Photo"/>
+                                    <connections>
+                                        <action selector="changeProfilePhotoDidTap:" destination="JS2-fe-kkE" eventType="touchUpInside" id="3iS-dO-39r"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1120,6 +1123,9 @@
                                                     <state key="normal" title="Create New Account">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="createNewAccountDidTap" destination="JS2-fe-kkE" eventType="touchUpInside" id="fi4-XT-Bfh"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1138,11 +1144,22 @@
                             <outlet property="delegate" destination="JS2-fe-kkE" id="0TJ-Xf-aYK"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem image="icon-back" id="GZZ-5e-Fvd"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="nV6-pe-xKG"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="nV6-pe-xKG">
+                        <barButtonItem key="leftBarButtonItem" image="icon-back" id="GZZ-5e-Fvd">
+                            <connections>
+                                <action selector="backDidTap:" destination="JS2-fe-kkE" id="aeU-Vz-2FK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="d9b-2s-4UF" id="IWs-ME-eBp"/>
+                        <outlet property="fullNameTextField" destination="EDj-I2-KrU" id="F9t-Cx-lrX"/>
+                        <outlet property="passwordTextField" destination="gWz-6l-OGy" id="Cft-dS-Iq4"/>
+                        <outlet property="profileImageView" destination="N99-Za-hA0" id="xft-hL-JHZ"/>
+                        <outlet property="usernameTextField" destination="T3g-sE-tKc" id="pcl-Gb-I2E"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAs-aM-pAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
