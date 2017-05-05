@@ -20,6 +20,9 @@
 		E09BCAAC1EBB9C4C00DA7226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09BCAAA1EBB9C4C00DA7226 /* Main.storyboard */; };
 		E09BCAAE1EBB9C4C00DA7226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E09BCAAD1EBB9C4C00DA7226 /* Assets.xcassets */; };
 		E09BCAB11EBB9C4C00DA7226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09BCAAF1EBB9C4C00DA7226 /* LaunchScreen.storyboard */; };
+		E0A5829E1EBCE219003AA00B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A5829D1EBCE219003AA00B /* LoginViewController.swift */; };
+		E0A582A11EBCE721003AA00B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A582A01EBCE721003AA00B /* ProfileViewController.swift */; };
+		E0A582A31EBCF2EE003AA00B /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A582A21EBCF2EE003AA00B /* Media.swift */; };
 		E0D3B5AF1EBC414600D3E2EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0D3B5AE1EBC414600D3E2EA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		E09BCAAD1EBB9C4C00DA7226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E09BCAB01EBB9C4C00DA7226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E09BCAB21EBB9C4C00DA7226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0A5829D1EBCE219003AA00B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E0A582A01EBCE721003AA00B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E0A582A21EBCF2EE003AA00B /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		E0D3B5AE1EBC414600D3E2EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F9D2D2702DCEB29B23EB655B /* Pods-Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moments/Pods-Moments.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +86,7 @@
 				E041DCBC1EBC4F5E006F45AA /* FirebaseReference.swift */,
 				E041DCBF1EBC539C006F45AA /* User.swift */,
 				E041DCC11EBC58B2006F45AA /* FIRimage.swift */,
+				E0A582A21EBCF2EE003AA00B /* Media.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -110,16 +117,50 @@
 				E09BCAA61EBB9C4C00DA7226 /* AppDelegate.swift */,
 				E041DCBE1EBC5390006F45AA /* Model */,
 				E09BCAAA1EBB9C4C00DA7226 /* Main.storyboard */,
-				E041DCC71EBC663E006F45AA /* WelcomeViewController.swift */,
-				E041DCC31EBC65BA006F45AA /* NewsFeedTableViewController.swift */,
-				E041DCC51EBC6600006F45AA /* SignupTableViewController.swift */,
-				E041DCC91EBC6B4A006F45AA /* imagePickerHelper.swift */,
+				E0A5829B1EBCE1B7003AA00B /* Newsfeed */,
+				E0A5829A1EBCE19E003AA00B /* User Authentication */,
+				E0A5829F1EBCE6FB003AA00B /* Profile Tab */,
+				E0A5829C1EBCE1CC003AA00B /* Helper Classes */,
 				E09BCAAD1EBB9C4C00DA7226 /* Assets.xcassets */,
 				E09BCAAF1EBB9C4C00DA7226 /* LaunchScreen.storyboard */,
 				E09BCAB21EBB9C4C00DA7226 /* Info.plist */,
 				E0D3B5AE1EBC414600D3E2EA /* GoogleService-Info.plist */,
 			);
 			path = Moments;
+			sourceTree = "<group>";
+		};
+		E0A5829A1EBCE19E003AA00B /* User Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E041DCC51EBC6600006F45AA /* SignupTableViewController.swift */,
+				E041DCC71EBC663E006F45AA /* WelcomeViewController.swift */,
+				E0A5829D1EBCE219003AA00B /* LoginViewController.swift */,
+			);
+			name = "User Authentication";
+			sourceTree = "<group>";
+		};
+		E0A5829B1EBCE1B7003AA00B /* Newsfeed */ = {
+			isa = PBXGroup;
+			children = (
+				E041DCC31EBC65BA006F45AA /* NewsFeedTableViewController.swift */,
+			);
+			name = Newsfeed;
+			sourceTree = "<group>";
+		};
+		E0A5829C1EBCE1CC003AA00B /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E041DCC91EBC6B4A006F45AA /* imagePickerHelper.swift */,
+			);
+			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		E0A5829F1EBCE6FB003AA00B /* Profile Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E0A582A01EBCE721003AA00B /* ProfileViewController.swift */,
+			);
+			name = "Profile Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A582A31EBCF2EE003AA00B /* Media.swift in Sources */,
+				E0A5829E1EBCE219003AA00B /* LoginViewController.swift in Sources */,
 				E041DCBD1EBC4F5E006F45AA /* FirebaseReference.swift in Sources */,
+				E0A582A11EBCE721003AA00B /* ProfileViewController.swift in Sources */,
 				E041DCC61EBC6600006F45AA /* SignupTableViewController.swift in Sources */,
 				E041DCC21EBC58B2006F45AA /* FIRimage.swift in Sources */,
 				E041DCCA1EBC6B4A006F45AA /* imagePickerHelper.swift in Sources */,

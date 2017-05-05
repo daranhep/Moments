@@ -14,6 +14,12 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             if let user = user {
                 self.dismiss(animated: false, completion: nil)
@@ -21,7 +27,6 @@ class WelcomeViewController: UIViewController {
                 
             }
         })
-        
     }
     
     override var prefersStatusBarHidden: Bool {

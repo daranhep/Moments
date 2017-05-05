@@ -65,12 +65,12 @@ class SignupTableViewController: UITableViewController {
                     let newUser = User(uid: firUser.uid, username: username, fullName: fullName, bio: "", website: "", follows: [], followedBy: [], profileImage: self.profileImage)
                     newUser.save(completion: { (error) in
                         if error != nil {
-                            //report
+                            print(error)
                         } else {
                             // Login User
                             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (firUser, error) in
                                 if let error = error {
-                                    // report error
+                                    print(error)
                                 } else {
                                     self.dismiss(animated: true, completion: nil)
                                 }
