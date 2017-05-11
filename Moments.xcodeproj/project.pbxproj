@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		57C3562A86690E14C4FAD7FB /* Pods_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43478AB0070C01E5B068AA7 /* Pods_Moments.framework */; };
 		E0276FE51EBD1BB000D31767 /* MediaHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0276FE41EBD1BB000D31767 /* MediaHeaderCell.swift */; };
+		E0276FE71EBD20AC00D31767 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0276FE61EBD20AC00D31767 /* MediaTableViewCell.swift */; };
+		E0276FE91EBD260D00D31767 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0276FE81EBD260D00D31767 /* CommentTableViewCell.swift */; };
+		E0276FEB1EBD38D800D31767 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0276FEA1EBD38D800D31767 /* Comment.swift */; };
+		E02975EF1EC4D66C00AF3334 /* MediaDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02975EE1EC4D66C00AF3334 /* MediaDetailTableViewController.swift */; };
+		E02975F11EC4E67D00AF3334 /* CommentComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02975F01EC4E67D00AF3334 /* CommentComposerViewController.swift */; };
 		E041DCBD1EBC4F5E006F45AA /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCBC1EBC4F5E006F45AA /* FirebaseReference.swift */; };
 		E041DCC01EBC539C006F45AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCBF1EBC539C006F45AA /* User.swift */; };
 		E041DCC21EBC58B2006F45AA /* FIRimage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041DCC11EBC58B2006F45AA /* FIRimage.swift */; };
@@ -33,6 +38,11 @@
 		19B3434E39E9BBD59C1EE660 /* Pods-Moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moments.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moments/Pods-Moments.debug.xcconfig"; sourceTree = "<group>"; };
 		D43478AB0070C01E5B068AA7 /* Pods_Moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0276FE41EBD1BB000D31767 /* MediaHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaHeaderCell.swift; sourceTree = "<group>"; };
+		E0276FE61EBD20AC00D31767 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		E0276FE81EBD260D00D31767 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		E0276FEA1EBD38D800D31767 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		E02975EE1EC4D66C00AF3334 /* MediaDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDetailTableViewController.swift; sourceTree = "<group>"; };
+		E02975F01EC4E67D00AF3334 /* CommentComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentComposerViewController.swift; sourceTree = "<group>"; };
 		E041DCBC1EBC4F5E006F45AA /* FirebaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		E041DCBF1EBC539C006F45AA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E041DCC11EBC58B2006F45AA /* FIRimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRimage.swift; sourceTree = "<group>"; };
@@ -86,6 +96,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E02975EC1EC4D57D00AF3334 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0276FE41EBD1BB000D31767 /* MediaHeaderCell.swift */,
+				E0276FE61EBD20AC00D31767 /* MediaTableViewCell.swift */,
+				E0276FE81EBD260D00D31767 /* CommentTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E02975ED1EC4D61E00AF3334 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E041DCC31EBC65BA006F45AA /* NewsFeedTableViewController.swift */,
+				E02975EE1EC4D66C00AF3334 /* MediaDetailTableViewController.swift */,
+				E02975F01EC4E67D00AF3334 /* CommentComposerViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		E041DCBE1EBC5390006F45AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +123,7 @@
 				E041DCBF1EBC539C006F45AA /* User.swift */,
 				E041DCC11EBC58B2006F45AA /* FIRimage.swift */,
 				E0A582A21EBCF2EE003AA00B /* Media.swift */,
+				E0276FEA1EBD38D800D31767 /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -149,8 +180,8 @@
 		E0A5829B1EBCE1B7003AA00B /* Newsfeed */ = {
 			isa = PBXGroup;
 			children = (
-				E041DCC31EBC65BA006F45AA /* NewsFeedTableViewController.swift */,
-				E0276FE41EBD1BB000D31767 /* MediaHeaderCell.swift */,
+				E02975ED1EC4D61E00AF3334 /* Controllers */,
+				E02975EC1EC4D57D00AF3334 /* Views */,
 			);
 			name = Newsfeed;
 			sourceTree = "<group>";
@@ -315,16 +346,21 @@
 				E0A582A61EBCFC12003AA00B /* DummyPostComposerViewController.swift in Sources */,
 				E0A5829E1EBCE219003AA00B /* LoginViewController.swift in Sources */,
 				E041DCBD1EBC4F5E006F45AA /* FirebaseReference.swift in Sources */,
+				E0276FE71EBD20AC00D31767 /* MediaTableViewCell.swift in Sources */,
+				E0276FEB1EBD38D800D31767 /* Comment.swift in Sources */,
 				E0A582AA1EBCFC82003AA00B /* PostComposerViewController.swift in Sources */,
 				E0276FE51EBD1BB000D31767 /* MediaHeaderCell.swift in Sources */,
 				E0A582A11EBCE721003AA00B /* ProfileViewController.swift in Sources */,
 				E041DCC61EBC6600006F45AA /* SignupTableViewController.swift in Sources */,
 				E041DCC21EBC58B2006F45AA /* FIRimage.swift in Sources */,
 				E041DCCA1EBC6B4A006F45AA /* imagePickerHelper.swift in Sources */,
+				E0276FE91EBD260D00D31767 /* CommentTableViewCell.swift in Sources */,
 				E09BCAA71EBB9C4C00DA7226 /* AppDelegate.swift in Sources */,
 				E041DCC41EBC65BA006F45AA /* NewsFeedTableViewController.swift in Sources */,
+				E02975EF1EC4D66C00AF3334 /* MediaDetailTableViewController.swift in Sources */,
 				E041DCC01EBC539C006F45AA /* User.swift in Sources */,
 				E041DCC81EBC663E006F45AA /* WelcomeViewController.swift in Sources */,
+				E02975F11EC4E67D00AF3334 /* CommentComposerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

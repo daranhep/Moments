@@ -19,20 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         
-        let dummyUser = User(uid: "123",
-                             username: "myUserNameDummy",
-                             fullName: "My Dummy User",
-                             bio: "My Dummy User",
-                             website: "My Dummy User",
-                             follows: [],
-                             followedBy: [],
-                             profileImage: UIImage(named: "1"))
-        
-        dummyUser.save { (error) in
-            print(error)
-        }
-            
-        
         
         return true
         

@@ -13,7 +13,7 @@ enum DatabaseReference
 {
     case root
     case users(uid: String)
-    case media
+    case media                  // posts
     case chats
     case messages
     
@@ -41,14 +41,13 @@ enum DatabaseReference
             return "messages"
         }
     }
-    
 }
 
 enum StorageReference
 {
     case root
-    case images
-    case profileImages
+    case images         // for post
+    case profileImages  // for user
     
     func reference() -> FIRStorageReference {
         return baseRef.child(path)

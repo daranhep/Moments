@@ -9,6 +9,9 @@
 import Foundation
 import Firebase
 
+import Foundation
+import Firebase
+
 class User
 {
     let uid: String
@@ -23,25 +26,16 @@ class User
     
     // MARK: - Initializers
     
-    init(
-        uid: String,
-        username: String,
-        fullName: String,
-        bio: String,
-        website: String,
-        follows: [User],
-        followedBy: [User],
-        profileImage: UIImage?
-        )
+    init(uid: String, username: String, fullName: String, bio: String, website: String, follows: [User], followedBy: [User], profileImage: UIImage?)
     {
         self.uid = uid
         self.username = username
         self.fullName = fullName
         self.bio = bio
         self.website = website
-        self.profileImage = profileImage
         self.follows = follows
         self.followedBy = followedBy
+        self.profileImage = profileImage
     }
     
     init(dictionary: [String : Any])
@@ -52,10 +46,9 @@ class User
         bio = dictionary["bio"] as! String
         website = dictionary["website"] as! String
         
-        //follows
+        // follows
         self.follows = []
-        if let followsDict = dictionary["follows"] as? [String : Any]
-        {
+        if let followsDict = dictionary["follows"] as? [String : Any] {
             for (_, userDict) in followsDict {
                 if let userDict = userDict as? [String : Any] {
                     self.follows.append(User(dictionary: userDict))
@@ -63,6 +56,7 @@ class User
             }
         }
         
+        // followedBy
         followedBy = []
         if let followedByDict = dictionary["followedBy"] as? [String : Any] {
             for (_, userDict) in followedByDict {
@@ -75,27 +69,26 @@ class User
     
     func save(completion: @escaping (Error?) -> Void)
     {
-        
-        // Save User information
+        // 1
         let ref = DatabaseReference.users(uid: uid).reference()
         ref.setValue(toDictionary())
         
-        // Save follows
+        // 2 - save follows
         for user in follows {
             ref.child("follows/\(user.uid)").setValue(user.toDictionary())
         }
         
-        // Save followed by
+        // 3 - save followed by "followedBy"
         for user in followedBy {
             ref.child("followedBy/\(user.uid)").setValue(user.toDictionary())
-            
-        // Save profileImage
-            if let profileImage = self.profileImage {
-                let firImage = FIRImage(image: profileImage)
-                firImage.saveProfileImage(self.uid, { (error) in
-                    completion(error)
-                })
-            }
+        }
+        
+        // 4 - save the profile image
+        if let profileImage = self.profileImage {
+            let firImage = FIRImage(image: profileImage)
+            firImage.saveProfileImage(self.uid, { (error) in
+                completion(error)
+            })
         }
     }
     
@@ -111,8 +104,7 @@ class User
 }
 
 extension User {
-    func share(newMedia: Media)
-    {
+    func share(newMedia: Media) {
         DatabaseReference.users(uid: uid).reference().child("media").childByAutoId().setValue(newMedia.uid)
     }
     
@@ -123,6 +115,14 @@ extension User {
             completion(image, error as NSError?)
         })
     }
+    
+    func follow(user: User) {
+        self.follows.append(user)
+        let ref = DatabaseReference.users(uid: uid).reference().child("follows/\(user.uid)")
+        
+        ref.setValue(user.toDictionary())
+    }
+    
 }
 
 extension User: Equatable { }

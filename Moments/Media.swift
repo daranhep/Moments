@@ -33,6 +33,28 @@ class Media
         uid = DatabaseReference.media.reference().childByAutoId().key
     }
     
+    init(dictionary: [String : Any])
+    {
+        uid = dictionary["uid"] as! String
+        type = dictionary["type"] as! String
+        caption = dictionary["caption"] as! String
+        createdTime = dictionary["createdTime"] as! Double
+        
+        let createdByDict = dictionary["createdBy"] as! [String : Any]
+        createdBy = User(dictionary: createdByDict)
+        
+        likes = []
+        if let likesDict = dictionary["likes"] as? [String : Any] {
+            for (_, userDict) in likesDict {
+                if let userDict = userDict as? [String : Any] {
+                    likes.append(User(dictionary: userDict))
+                }
+            }
+        }
+        
+        comments = []
+    }
+    
     func save(completion: @escaping (Error?) -> Void)
     {
         let ref = DatabaseReference.media.reference().child(uid)
@@ -77,51 +99,19 @@ extension Media {
     }
 }
 
-class Comment {
-    var mediaUID: String
-    var uid: String
-    var createdTime: Double
-    var from: User
-    var caption: String
-    var ref: FIRDatabaseReference
-    
-    init(mediaUID: String, from: User, caption: String)
+extension Media {
+    class func observeNewMedia(_ completion: @escaping (Media) -> Void)
     {
-        self.mediaUID = mediaUID
-        self.from = from
-        self.caption = caption
-        
-        self.createdTime = Date().timeIntervalSince1970
-        
-        ref = DatabaseReference.media.reference().child("\(mediaUID)/comments").childByAutoId()
-        uid = ref.key
+        DatabaseReference.media.reference().observe(.childAdded, with: { snapshot in
+            let media = Media(dictionary: snapshot.value as! [String: Any])
+            completion(media)
+        })
     }
-    
-    init(dictionary: [String : Any]) {
-        uid = dictionary["uid"] as! String
-        createdTime = dictionary["createdTime"] as! Double
-        caption = dictionary["caption"] as! String
-        
-        let fromDictionary = dictionary["from"] as! [String : Any]
-        from = User(dictionary: fromDictionary)
-        
-        mediaUID = dictionary["mediaUID"] as! String
-        ref = DatabaseReference.media.reference().child("\(mediaUID)/comments/\(uid)")
-    }
-    
-    func save() {
-        ref.setValue(toDictionary())
-    }
-    
-    func toDictionary() -> [String: Any]
-    {
-        return [
-            "mediaUID" : mediaUID,
-            "uid" : uid,
-            "createdTime" : createdTime,
-            "from" : from.toDictionary(),
-            "caption" : caption
-        ]
-    }
-    
 }
+
+extension Media: Equatable { }
+
+func ==(lhs: Media, rhs: Media) -> Bool {
+    return lhs.uid == rhs.uid
+}
+

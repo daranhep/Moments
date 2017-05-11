@@ -47,7 +47,6 @@ extension FIRImage
         ref.put(imageData!, metadata: nil) { (metaData, error) in
             completion(error)
         }
-
     }
 }
 
@@ -75,7 +74,6 @@ extension FIRImage
                 completion(nil, error)
             }
         }
-
     }
 }
 
