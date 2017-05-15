@@ -9,6 +9,10 @@
 import UIKit
 import SAMCache
 
+protocol MediaTableViewCellDelegate: class {
+    func commentButtonDidTap(media: Media)
+}
+
 class MediaTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mediaImageView: UIImageView!
@@ -30,6 +34,7 @@ class MediaTableViewCell: UITableViewCell {
     }
     
     var cache = SAMCache.shared()
+    weak var delegate: MediaTableViewCellDelegate?
     
     func updateUI()
     {
@@ -66,11 +71,17 @@ class MediaTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeDidTap() {
-        
+        if media.likes.contains(currentUser) {
+            likeButton.setImage(UIImage(named: "icon-like"), for: [])
+            media.unlikedBy(user: currentUser)
+        } else {
+            likeButton.setImage(UIImage(named: "icon-like-filled"), for: [])
+            media.likedBy(user: currentUser)
+        }
     }
     
     @IBAction func commentDidTap() {
-        
+        delegate?.commentButtonDidTap(media: media)
     }
     
     @IBAction func shareDidTap() {

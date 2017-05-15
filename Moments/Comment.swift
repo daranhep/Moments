@@ -57,3 +57,9 @@ class Comment {
     }
     
 }
+
+extension Comment : Equatable { }
+
+func ==(lhs: Comment, rhs: Comment) -> Bool {
+    return lhs.uid == rhs.uid
+}

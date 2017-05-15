@@ -27,34 +27,34 @@ class MediaDetailTableViewController: UITableViewController
         comments = media.comments
         tableView.reloadData()
         
-//        self.fetchComments()
+        self.fetchComments()
     }
     
-//    func fetchComments()
-//    {
-//        media.observeNewComment { (comment) in
-//            if !self.comments.contains(comment) {
-//                self.comments.insert(comment, at: 0)
-//                self.tableView.reloadData()
-//            }
-//        }
-//    }
-//    
-//    // MARK: - Target / Action
-//    
-//    @IBAction func commentDidTap() {
-//        self.performSegue(withIdentifier: Storyboard.showCommentComposer, sender: media)
-//    }
-//    
-//    // MARK: - Navigation
-//    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == Storyboard.showCommentComposer {
-//            let commentComposer = segue.destination as! CommentComposerViewController
-//            commentComposer.media = media
-//            commentComposer.currentUser = currentUser
-//        }
-//    }
+    func fetchComments()
+    {
+        media.observeNewComment { (comment) in
+            if !self.comments.contains(comment) {
+                self.comments.insert(comment, at: 0)
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: - Target / Action
+    
+    @IBAction func commentDidTap() {
+        self.performSegue(withIdentifier: Storyboard.showCommentComposer, sender: media)
+    }
+
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.showCommentComposer {
+            let commentComposer = segue.destination as! CommentComposerViewController
+            commentComposer.media = media
+            commentComposer.currentUser = currentUser
+        }
+    }
     
     // MARK: - UITableViewDataSource
     
