@@ -123,6 +123,17 @@ extension User {
         ref.setValue(user.toDictionary())
     }
     
+    func isFollowedBy(_ user: User) {
+        self.followedBy.append(user)
+        let ref = DatabaseReference.users(uid: uid).reference()
+        ref.child("followedBy/\(user.uid)").setValue(user.toDictionary())
+    }
+    
+    func save(new chat: Chat)
+    {
+        DatabaseReference.users(uid: self.uid).reference().child("chatIds/\(chat.uid)").setValue(true)
+    }
+
 }
 
 extension User: Equatable { }

@@ -46,9 +46,9 @@ class MediaHeaderCell: UITableViewCell {
                 }
             }
         }
-        self.profileImageView.clipsToBounds = true
-        self.profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2.0
-        self.profileImageView.layer.masksToBounds = true
+//        self.profileImageView.clipsToBounds = true
+//        self.profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2.0
+//        self.profileImageView.layer.masksToBounds = true
         
         
         usernameButton.setTitle(media.createdBy.username, for: [])
@@ -63,6 +63,14 @@ class MediaHeaderCell: UITableViewCell {
             followButton.isHidden = false
         }
     }
+    
+    @IBAction func followDidTap(_ sender: AnyObject)
+    {
+        currentUser.follow(user: media.createdBy)
+        media.createdBy.isFollowedBy(currentUser)
+        followButton.isHidden = true
+    }
+
     
 
 }
